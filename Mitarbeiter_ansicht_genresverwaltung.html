@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Daten</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="Style.css">
+<link rel="stylesheet" href="css/font-awesome.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<div class="header">
+  <h1>Buchladen</h1>
+</div>
+
+<div class="navbar">
+  <a href="#" class="active">Mein Konto</a>
+  <a href="#">Katalog</a>
+  <a href="#">Warenkorb</a>
+  <a href="#">Kalender</a>
+  <a href="#" class="right">Abmelden</a>
+</div>
+
+<div class="topnav">
+  <a href="#sort">Daten</a>
+  <a href="#sort">Rechnungen</a>
+  <a href="#sort">Warenverwaltung</a>
+  <a href="#sort">Kundenverwaltung</a>
+  <a href="#sort" class="active">Genresverwaltung</a>
+  <a href="#sort">Veranstaltungen</a>
+</div>
+
+  <div class="center">
+    <h2>${name} - Mitarbeiter Ansicht</h2>
+    <h5>Mitarbeiter-nummer: ${id}</h5>
+</div>
+
+<div class="center">
+	 
+	 <h4>Genresverwaltung:</h4>
+	 </br>
+		<select class="select_menu" id="Select_genre" style="width: 150px;" value="Artikel" onchange="show_one_genre()">
+			<option value="buch">Buch</option>
+			<option value="film">CD/DVD</option>
+		</select>
+		<div id="film_select_genre" class="film-genre">
+			<table>
+				<tr>
+				<th>Genre <button id="btnsort1"><i class="fa fa-sort"></i></button> </th>
+				<th>Entfernen</th>
+				</tr>
+				  <tr>
+					<td>Actionfilm</td>
+					<td><button id="btndel">Entfernen</button></td>
+				  </tr>
+				  <tr>
+					<td>Horror</td>
+					<td><button id="btndel">Entfernen</button></td>
+				  </tr>
+				  <tr>
+					<td>Historienfilm</td>
+					<td><button id="btndel">Entfernen</button></td>
+				  </tr>
+				  <tr>
+					<td>Drama</td>
+					<td><button id="btndel">Entfernen</button></td>
+				  </tr>
+			</table>
+		</div>
+		<div id="book_select_genre" class="book-genre">
+			<table>
+				<tr>
+				<th>Genre <button id="btnsort1"><i class="fa fa-sort"></i></button> </th>
+				<th>Entfernen</th>
+				</tr>
+				  <tr>
+					<td>Fantasy</td>
+					<td><button id="btndel">Entfernen</button></td>
+				  </tr>
+				  <tr>
+					<td>Liebesroman</td>
+					<td><button id="btndel">Entfernen</button></td>
+				  </tr>
+				  <tr>
+					<td>Fachbuch</td>
+					<td><button id="btndel">Entfernen</button></td>
+				  </tr>
+				  <tr>
+					<td>Biografie</td>
+					<td><button id="btndel">Entfernen</button></td>
+				  </tr>
+			</table>
+		</div>
+		</br>
+		<h4>Genre hinzufügen:</h4>
+		<input type="text" th:field="*{genre}" th:errorclass="is-invalid" required="required" />
+		<br></br>
+		<button id="add_genre" type="button" class="submit_button">Hinzufügen</button>
+	 
+</div>	
+
+<!-- Script making all "accordion" elements collapsible -->
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+	deactivate_all();
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+	  hide_all();
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+<script>
+function show_one_reg() {
+    var x = document.getElementById("Select_reg").value;
+	var book = document.getElementById("book_select_reg");
+	var film = document.getElementById("film_select_reg");
+    if(x == "buch"){
+	   book.style.display = "block";
+	   film.style.display = "none";
+    } else if(x == "film") {
+		book.style.display = "none";
+		film.style.display = "block";
+		}
+}
+
+function show_one_genre() {
+    var x = document.getElementById("Select_genre").value;
+	var book = document.getElementById("book_select_genre");
+	var film = document.getElementById("film_select_genre");
+    if(x == "buch"){
+	   book.style.display = "block";
+	   film.style.display = "none";
+    } else if(x == "film") {
+		book.style.display = "none";
+		film.style.display = "block";
+		}
+}
+
+function deactivate_all() {
+	var all = document.getElementsByClassName("accordion");
+	var i;
+	for (i = 0; i < all.length; i++) {
+		all[i].classList.remove("active");
+	}
+}
+
+function hide_all() {
+	var all = document.getElementsByClassName("panel");
+	var i;
+	for (i = 0; i < all.length; i++) {
+		all[i].style.maxHeight = null;
+	}
+}
+</script>
+
+<footer>
+<br>
+<br>
+<br>
+</footer>
+
+</body>
+</html>

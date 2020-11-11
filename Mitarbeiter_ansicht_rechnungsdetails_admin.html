@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Daten</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="Style.css">
+<link rel="stylesheet" href="css/font-awesome.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<div class="header">
+  <h1>Buchladen</h1>
+</div>
+
+<div class="navbar">
+  <a href="#" class="active">Mein Konto</a>
+  <a href="#">Katalog</a>
+  <a href="#">Warenkorb</a>
+  <a href="#">Kalender</a>
+  <a href="#" class="right">Abmelden</a>
+</div>
+
+<div class="topnav">
+  <a href="#sort">Daten</a>
+  <a href="#sort" class="active">Rechnungen</a>
+  <a href="#sort">Warenverwaltung</a>
+  <a href="#sort">Kundenverwaltung</a>
+  <a href="#sort">Genresverwaltung</a>
+  <a href="#sort">Veranstaltungen</a>
+  <a href="#sort">Mitarbeiterverwaltung</a>
+</div>
+
+  <div class="center">
+    <h2>${name} - Mitarbeiter Ansicht (Admin)</h2>
+    <h5>Mitarbeiter-nummer: ${id}</h5>
+</div>
+
+<div class="center">
+	 
+	 <h4>Rechnungsdetails($bestellungsnummer)</h4>
+	 
+	 <table class="center" >
+  <tr>
+    <th>Produkt</th>
+    <th>Preis</th>
+	 <th>Anzahl</th>
+	  <th>Preis</th>
+  </tr>
+  <tr>
+	<td>To kill a mocking Bird
+	<h5>Harper Lee </h5></td>
+    <td>€15.99</td>
+    <td>2</td>
+	<td>€31.98</td>
+  </tr>
+  
+   <tr>
+	<td>It's not all downhill from here
+	<h5>Terry McMillen </h5></td>
+    <td>€12.50</td>
+    <td>1</td>
+	<td>€12.50</td>
+  </tr>
+  
+  <tr>
+	<td></td>
+	<td></td>
+    <th>Gesamt</th>
+    <td>€44.88</td>
+	</tr>
+  
+  </table>
+</div>	
+
+<!-- Script making all "accordion" elements collapsible -->
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+	deactivate_all();
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+	  hide_all();
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+<script>
+function show_one_reg() {
+    var x = document.getElementById("Select_reg").value;
+	var book = document.getElementById("book_select_reg");
+	var film = document.getElementById("film_select_reg");
+    if(x == "buch"){
+	   book.style.display = "block";
+	   film.style.display = "none";
+    } else if(x == "film") {
+		book.style.display = "none";
+		film.style.display = "block";
+		}
+}
+
+function show_one_genre() {
+    var x = document.getElementById("Select_genre").value;
+	var book = document.getElementById("book_select_genre");
+	var film = document.getElementById("film_select_genre");
+    if(x == "buch"){
+	   book.style.display = "block";
+	   film.style.display = "none";
+    } else if(x == "film") {
+		book.style.display = "none";
+		film.style.display = "block";
+		}
+}
+
+function deactivate_all() {
+	var all = document.getElementsByClassName("accordion");
+	var i;
+	for (i = 0; i < all.length; i++) {
+		all[i].classList.remove("active");
+	}
+}
+
+function hide_all() {
+	var all = document.getElementsByClassName("panel");
+	var i;
+	for (i = 0; i < all.length; i++) {
+		all[i].style.maxHeight = null;
+	}
+}
+</script>
+
+<footer>
+<br>
+<br>
+<br>
+</footer>
+
+</body>
+</html>

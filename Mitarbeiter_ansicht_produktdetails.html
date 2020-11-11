@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Warenkorb</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="Style.css">
+</head>
+<body>
+
+<div class="header">
+  <h1>Buchladen</h1>
+</div>
+
+<div class="navbar">
+  <a href="#" class="active">Mein Konto</a>
+  <a href="#">Katalog</a>
+  <a href="#">Warenkorb</a>
+  <a href="#">Kalender</a>
+  <a href="#" class="right">Abmelden</a>
+</div>
+
+<div class="topnav">
+  <a href="#sort">Daten</a>
+  <a href="#sort">Rechnungen</a>
+  <a href="#sort" class="active">Warenverwaltung</a>
+  <a href="#sort">Kundenverwaltung</a>
+  <a href="#sort">Genresverwaltung</a>
+  <a href="#sort">Veranstaltungen</a>
+</div>
+
+  <div class="center">
+    <h2>${name} - Mitarbeiter Ansicht</h2>
+    <h5>Mitarbeiter-nummer: ${id}</h5>
+</div>
+
+<div class="center">
+	<!--</br>
+	<button>Bearbeiten</button>
+	</br>-->
+	<h4>Umschlag:</h4>
+	<img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1553383690l/2657.jpg" width="100" height="150" />
+	<h4>Title:</h4>
+	<blockquote id="textfield1" th:text="${product.title}">To kill a mocking Bird</blockquote>
+	<h4>Autor:</h4>
+	<blockquote id="textfield2" th:text="${product.author}">Harper Lee</blockquote>
+	<h4>ISBN:</h4>
+	<blockquote id="textfield3" th:text="${product.isbn}">9780099549482</blockquote>
+	<h4>Genre:</h4>
+	<blockquote id="textfield4" th:text="${product.genre}">Fiction</blockquote>
+	<h4>Preis:</h4>
+	<blockquote id="textfield5" th:text="${product.price}">€15.99</blockquote>
+	<h4>Beschreibung:</h4>
+	<blockquote id="textfield6" th:text="${product.description}">Hier steht eine Beschreibung</blockquote>
+	
+</div>
+
+
+
+</body>
+</html>
