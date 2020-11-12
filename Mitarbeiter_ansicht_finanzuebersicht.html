@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="Style.css">
 <link rel="stylesheet" href="css/font-awesome.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
@@ -22,40 +23,91 @@
 </div>
 
 <div class="topnav">
-  <a href="#sort" class="active">Daten</a>
+  <a href="#sort">Daten</a>
+  <a href="#sort" class="active">Finanzübersicht</a>
   <a href="#sort">Warenverwaltung</a>
   <a href="#sort">Kundenverwaltung</a>
   <a href="#sort">Genresverwaltung</a>
   <a href="#sort">Veranstaltungen</a>
+  <a href="#sort">Mitarbeiterverwaltung</a>
 </div>
 
   <div class="center">
-    <h2>${name} - Mitarbeiter Ansicht</h2>
+    <h2>${name} - Mitarbeiter Ansicht (Admin)</h2>
     <h5>Mitarbeiter-nummer: ${id}</h5>
 </div>
 
 <div class="center">
 	 
-	 </br>
-		 <div class="form-group">
-			<label for="altespasswort" th:text="#{account.password.change}">Altes Passwort</label><br />
-			<input class="form-control" type="text" th:field="*{altespasswort}" th:errorclass="is-invalid" required="required" />
-			<br>
-			<br>
-			<label for="Neues Passwort" th:text="#{account.password.change}">Neues Passwort</label><br />
-			<input class="form-control" type="text" th:field="*{neuespasswort}" th:errorclass="is-invalid" required="required" />
-			<br>
-			<br>
-				<label for="Neues Passwort Bestätigen" th:text="#{account.password.change}">Neues Passwort Bestätigen</label><br />
-			<input class="form-control" type="text" th:field="*{neuespasswort}" th:errorclass="is-invalid" required="required" />
-			<br>
-			</br>
-			<button th:title="#{account.passwort.change}" class="btn btn-sm float-right">
-							Ändern
-						</button>
-			<!-- <div th:if="${#fields.hasErrors('altespasswort')}" class="invalid-feedback" th:text="#{account.passwort.altespasswort.required}">Bitte altes Passwort eingeben</div> -->
-		</div>
-	</div>
+	 <h4>Rechnungen:</h4> <!-- TODO: Dynamic list with MVC, now only a mock-up -->
+		 <div>
+			<table>
+				<tr>
+				<th>Bestellungsnummer <button id="btnsort1"><i class="fa fa-sort"></i></button> </th>
+				<th>Gesamtbetrag <button id="btnsort1"><i class="fa fa-sort"></i></button> </th>
+				<th>Datum <button id="btnsort1"><i class="fa fa-sort"></i></button> </th>
+				<th>Details anzeigen</th>
+				</tr>
+				  <tr>
+					<td>#163548</td>
+					<td>€36.66</td>
+					<td>12.10.2020</td>
+					<td><button>Details</button></td>
+				  </tr>
+				  <tr>
+				  <td>#454634</td>
+					<td>€12.16</td>
+					<td>9.9.2020</td>
+					<td><button>Details</button></td>
+				  </tr>
+				  <tr>
+				  <td>#454634</td>
+					<td>€142.78</td>
+					<td>8.7.2020</td>
+					<td><button>Details</button></td>
+				  </tr>
+				  <tr>
+					 <td>#253234</td>
+					<td>€10.43</td>
+					<td>3.5.2020</td>
+					<td><button>Details</button></td>
+				  </tr>
+				  <tr>
+					 <td>#464536</td>
+					<td>€14.16</td>
+					<td>9.4.2020</td>
+					<td><button>Details</button></td>
+				  </tr>
+				  <tr>
+					<td>#753567</td>
+					<td>€23.54</td>
+					<td>4.3.2020</td>
+					<td><button>Details</button></td>
+				  </tr>
+				  <tr>
+					<td>Gesamteinnahmen: </td>
+					<td>€239.73</td>
+				</tr>
+			</table>
+		 </div>
+		 
+		 <select class="select_month" id="Select_month" style="width: 150px;" value="Monat" onchange="">
+			<option value="buch">Januar</option>
+			<option value="film">Februar</option>
+			<option value="buch">März</option>
+			<option value="film">April</option>
+			<option value="buch">Mai</option>
+			<option value="film">Juni</option>
+			<option value="buch">Juli</option>
+			<option value="film">August</option>
+			<option value="buch">September</option>
+			<option value="film">Oktober</option>
+			<option value="buch">November</option>
+			<option value="film">Dezember</option>
+		</select>
+		<br>
+		<h5>Monatliche Gesamteinnahmen:</h5>
+		<div>€999.99</div>
 	 
 </div>	
 

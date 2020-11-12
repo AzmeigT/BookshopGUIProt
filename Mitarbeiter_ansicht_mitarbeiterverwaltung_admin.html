@@ -24,7 +24,7 @@
 
 <div class="topnav">
   <a href="#sort">Daten</a>
-  <a href="#sort">Rechnungen</a>
+  <a href="#sort">Finanzübersicht</a>
   <a href="#sort">Warenverwaltung</a>
   <a href="#sort">Kundenverwaltung</a>
   <a href="#sort">Genresverwaltung</a>
@@ -49,40 +49,39 @@
 				<tr>
 					<td>#81234567</td>
 					<td>Timo Werner</td>
-					<td><button id="btndel">Entfernen</button></td>
+					<td><button id="btndel">Mitarbeiter entfernen</button></td>
 				</tr>
 				<tr>
 					<td>#84435432</td>
 					<td>Mario Götze</td>
-					<td><button id="btndel">Entfernen</button></td>
+					<td><button id="btndel">Mitarbeiter entfernen</button></td>
 				</tr>
 				<tr>
 					<td>#89564534</td>
 					<td>Toni Kroos</td>
-					<td><button id="btndel">Entfernen</button></td>
+					<td><button id="btndel">Mitarbeiter entfernen</button></td>
 				</tr>
 				<tr>
 					<td>#83222156</td>
 					<td>Manuel Neuer</td>
-					<td><button id="btndel">Entfernen</button></td>
+					<td><button id="btndel">Mitarbeiter entfernen</button></td>
 				</tr>
 			</table>
 		</div>
 		</br>
-		<h4>Mitarbeiter hinzufügen:</h4>
-		<div id="worker_reg" class="worker-reg">
-			<br/>
-			<label for="ID" th:text="#{mitarbeiter.id}">Mitarbeiternummer (ID)</label><br />
-			<input type="text" th:field="*{id}" th:errorclass="is-invalid" />
-			<br>
-			<br>
-			<label for="name" th:text="#{mitarbeiter.name}">Name</label><br />
-			<input type="text" th:field="*{name}" th:errorclass="is-invalid" />
+		<button id="new_worker_reg_btn" onclick="new_worker_registration()" style="width: 210px; height: 70px; text-align: center; font-size: 20px;">Mitarbeiter hinzufügen</button>
+		<br>
+		<div id="new_worker_reg" style="display: none;">
+			<h4>Mitarbeiter hinzufügen:</h4>
+			<div id="worker_reg" class="worker-reg">
+				<br/>
+				<label for="name" th:text="#{mitarbeiter.name}">Name</label><br />
+				<input type="text" th:field="*{name}" th:errorclass="is-invalid" />
+			</div>
+			<br></br>
+			<button id="add_worker" type="button" class="submit_button">Hinzufügen</button>
+			</br>
 		</div>
-		<br></br>
-		<button id="add_worker" type="button" class="submit_button">Hinzufügen</button>
-		</br>
-	 </div>
 	 
 	</div>	
 
@@ -106,6 +105,15 @@ for (i = 0; i < acc.length; i++) {
 }
 </script>
 <script>
+function new_worker_registration() {
+	var x = document.getElementById("new_worker_reg");
+	if(x.style.display == "none") {
+		x.style.display = "block";
+	} else {
+		x.style.display = "none";
+	}
+}
+
 function show_one_reg() {
     var x = document.getElementById("Select_reg").value;
 	var book = document.getElementById("book_select_reg");

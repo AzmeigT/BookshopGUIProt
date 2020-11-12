@@ -24,7 +24,6 @@
 
 <div class="topnav">
   <a href="#sort">Daten</a>
-  <a href="#sort">Rechnungen</a>
   <a href="#sort">Warenverwaltung</a>
   <a href="#sort" class="active">Kundenverwaltung</a>
   <a href="#sort">Genresverwaltung</a>
@@ -37,6 +36,36 @@
 </div>
 
 <div class="center">
+
+	 <h4>Registrierte Kunden:</h4>
+		<div id="registered_users">
+			<table>
+				<tr>
+				<th>ID <button id="btnsort1"><i class="fa fa-sort"></i></button> </th>
+				<th>Name <button id="btnsort1"><i class="fa fa-sort"></i></button></th>
+				<th>E-Mail <button id="btnsort1"><i class="fa fa-sort"></i></button></th>
+				<th>Adresse <button id="btnsort1"><i class="fa fa-sort"></i></button></th>
+				</tr>
+				<tr>
+					<td>#12345678</td>
+					<td>Richard Wagner</td>
+					<td>rwagner@xyz.de</td>
+					<td>Musterstrasse 10, 01234 Musterstadt</td>
+				</tr>
+				<tr>
+					<td>#12312312</td>
+					<td>Albert Einstein</td>
+					<td>aeinstein@xyz.de</td>
+					<td>Musterstrasse 15, 01234 Musterstadt</td>
+				</tr>
+				<tr>
+					<td>#15634231</td>
+					<td>Max Mustermann</td>
+					<td>mmustermann@xyz.de</td>
+					<td>Musterstrasse 25, 01234 Musterstadt</td>
+				</tr>
+			</table>
+		</div>
 	 
 	 <h4>Deaktivierte Kunden:</h4>
 		<div id="deactivated_users">
@@ -47,23 +76,6 @@
 				<th>E-Mail <button id="btnsort1"><i class="fa fa-sort"></i></button></th>
 				<th>Adresse <button id="btnsort1"><i class="fa fa-sort"></i></button></th>
 				<th>Aktivieren</th>
-				<th>Entfernen</th>
-				</tr>
-				<tr>
-					<td>#12345678</td>
-					<td>Richard Wagner</td>
-					<td>rwagner@xyz.de</td>
-					<td>Musterstrasse 10, 01234 Musterstadt</td>
-					<td><button id="btndel">Aktivieren</button></td>
-					<td><button id="btndel">Entfernen</button></td>
-				</tr>
-				<tr>
-					<td>#12312312</td>
-					<td>Albert Einstein</td>
-					<td>aeinstein@xyz.de</td>
-					<td>Musterstrasse 15, 01234 Musterstadt</td>
-					<td><button id="btndel">Aktivieren</button></td>
-					<td><button id="btndel">Entfernen</button></td>
 				</tr>
 				<tr>
 					<td>#12233445</td>
@@ -71,15 +83,6 @@
 					<td>jstrauss@xyz.de</td>
 					<td>Musterstrasse 20, 01234 Musterstadt</td>
 					<td><button id="btndel">Aktivieren</button></td>
-					<td><button id="btndel">Entfernen</button></td>
-				</tr>
-				<tr>
-					<td>#15634231</td>
-					<td>Max Mustermann</td>
-					<td>mmustermann@xyz.de</td>
-					<td>Musterstrasse 25, 01234 Musterstadt</td>
-					<td><button id="btndel">Aktivieren</button></td>
-					<td><button id="btndel">Entfernen</button></td>
 				</tr>
 			</table>
 		</div>

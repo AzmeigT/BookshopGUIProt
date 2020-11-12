@@ -24,7 +24,6 @@
 
 <div class="topnav">
   <a href="#sort">Daten</a>
-  <a href="#sort">Rechnungen</a>
   <a href="#sort" class="active">Warenverwaltung</a>
   <a href="#sort">Kundenverwaltung</a>
   <a href="#sort">Genresverwaltung</a>
@@ -38,7 +37,7 @@
 
 <div class="center">
 	 
-	 <h4>Warenansicht:</h4> <!-- TODO: Dynamic list with MVC, now only a mock-up -->
+	 	 <h4>Warenansicht:</h4> <!-- TODO: Dynamic list with MVC, now only a mock-up -->
 	 <div>
 		<table>
 			<tr>
@@ -47,8 +46,6 @@
 			<th>Titel <button id="btnsort1"><i class="fa fa-sort"></i></button> </th>
 			<th>Preis <button id="btnsort1"><i class="fa fa-sort"></i></button> </th>
 			<th>Anzahl <button id="btnsort1"><i class="fa fa-sort"></i></button> </th>
-			<th>Nachbestellen</th>
-			<th>Entfernen</th>
 			</tr>
 			  <tr>
 				<td>Film</td>
@@ -56,8 +53,6 @@
 				<td>ABC</td>
 				<td>€36.66</td>
 				<td>12</td>
-				<td><button id="btnord">Nachbestellen</button></td>
-				<td><button id="btndel">Entfernen</button></td>
 			  </tr>
 			  <tr>
 				<td>Film</td>
@@ -65,8 +60,6 @@
 				<td>BCD</td>
 				<td>€12.16</td>
 				<td>6</td>
-				<td><button id="btnord">Nachbestellen</button></td>
-				<td><button id="btndel">Entfernen</button></td>
 			  </tr>
 			  <tr>
 				<td>Buch</td>
@@ -74,8 +67,6 @@
 				<td>CDE</td>
 				<td>€14.78</td>
 				<td>32</td>
-				<td><button id="btnord">Nachbestellen</button></td>
-				<td><button id="btndel">Entfernen</button></td>
 			  </tr>
 			  <tr>
 				<td>Buch</td>
@@ -83,8 +74,6 @@
 				<td>DEF</td>
 				<td>€10.43</td>
 				<td>6</td>
-				<td><button id="btnord">Nachbestellen</button></td>
-				<td><button id="btndel">Entfernen</button></td>
 			  </tr>
 			  <tr>
 				<td>Film</td>
@@ -92,8 +81,6 @@
 				<td>EFG</td>
 				<td>€14.16</td>
 				<td>1</td>
-				<td><button id="btnord">Nachbestellen</button></td>
-				<td><button id="btndel">Entfernen</button></td>
 			  </tr>
 			  <tr>
 				<td>Buch</td>
@@ -101,8 +88,6 @@
 				<td>FGH</td>
 				<td>€23.54</td>
 				<td>22</td>
-				<td><button id="btnord">Nachbestellen</button></td>
-				<td><button id="btndel">Entfernen</button></td>
 			  </tr>
 			  <tr>
 				<td>Buch</td>
@@ -110,8 +95,6 @@
 				<td>GHI</td>
 				<td>€36.66</td>
 				<td>3</td>
-				<td><button id="btnord">Nachbestellen</button></td>
-				<td><button id="btndel">Entfernen</button></td>
 			  </tr>
 			  <tr>
 				<td>Buch</td>
@@ -119,8 +102,6 @@
 				<td>HIJ</td>
 				<td>€12.16</td>
 				<td>21</td>
-				<td><button id="btnord">Nachbestellen</button></td>
-				<td><button id="btndel">Entfernen</button></td>
 			  </tr>
 			  <tr>
 				<td>Film</td>
@@ -128,8 +109,6 @@
 				<td>IJK</td>
 				<td>€142.78</td>
 				<td>34</td>
-				<td><button id="btnord">Nachbestellen</button></td>
-				<td><button id="btndel">Entfernen</button></td>
 			  </tr>
 			  
 			  <tr>
@@ -138,8 +117,6 @@
 				<td>JKL</td>
 				<td>€10.43</td>
 				<td>21</td>
-				<td><button id="btnord">Nachbestellen</button></td>
-				<td><button id="btndel">Entfernen</button></td>
 			  </tr>
 			 
 			  <tr>
@@ -148,8 +125,6 @@
 				<td>KLM</td>
 				<td>€14.16</td>
 				<td>55</td>
-				<td><button id="btnord">Nachbestellen</button></td>
-				<td><button id="btndel">Entfernen</button></td>
 			  </tr>
 			  <tr>
 				<td>Film</td>
@@ -157,12 +132,13 @@
 				<td>LMN</td>
 				<td>€23.54</td>
 				<td>15</td>
-				<td><button id="btnord">Nachbestellen</button></td>
-				<td><button id="btndel">Entfernen</button></td>
 			  </tr>
 		</table>
 	 </div>
 	 
+	 <button id="item_reg_btn" onclick="item_registration()" style="width: 210px; height: 70px; text-align: center; font-size: 20px;">Neue Ware hinzufügen</button>
+	 <br>
+	 <div id="item_reg" style="display: none;">
 	 <h4>Ware registrieren:</h4>
 	 </br>
 		 <select class="select_menu" id="Select_reg" style="width: 150px;" value="Artikel" onchange="show_one_reg()">
@@ -236,7 +212,8 @@
 		</div>
 		</br></br>
 		<button id="add_article" type="button" class="submit_button">Registrieren</button>
-	</div>	
+	</div>
+	</div>
 
 <!-- Script making all "accordion" elements collapsible -->
 <script>
@@ -258,6 +235,15 @@ for (i = 0; i < acc.length; i++) {
 }
 </script>
 <script>
+function item_registration() {
+	var x = document.getElementById("item_reg");
+	if(x.style.display == "none") {
+		x.style.display = "block";
+	} else {
+		x.style.display = "none";
+	}
+}
+
 function show_one_reg() {
     var x = document.getElementById("Select_reg").value;
 	var book = document.getElementById("book_select_reg");
